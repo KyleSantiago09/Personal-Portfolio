@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --maincolor: #121212;
+    --contentcolor: #ffffff1f;
+    --textcolor: #ffffff;
+    --footercolor: #0a0a0a;
+    --hovercolor: #646464;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background-color: var(--maincolor);
+    color: var(--textcolor);
+}
+
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 5em;
+    padding: 0 3em;
+    background-color: var(--maincolor);
+    color: var(--textcolor);
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none; 
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: var(--textcolor);
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--textcolor);
+}
+
+main {
+    display: grid;
+    justify-content: center;
+    gap: 1em;
+    min-height: 120vh;
+}
+
+.grid-container {
+    width: 96vw;
+    display: grid;
+    margin: 1em;
+    gap: 1em;
+    grid-template-columns: 22vw 1fr 1fr 1fr;
+    grid-template-rows: 40vh 60vh;
+    grid-template-areas: 
+    "box-1 box-2 box-2 box-2"
+    "box-1 box-3 box-4 box-5";
+}
+
+.main-container {
+    background-color: var(--contentcolor);
+    border-radius: 20px;
+    gap: 1em;
+}
+
+.bio-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 3em;
+}
+
+.bio-section img {
+    height: 225px;
+    width: 225px;
+    border-radius: 50%;;
+}
+
+.bio {
+    text-align: start;
+}
+
+.bio p {
+    margin-bottom: 0.5em;
+}
+
+.about-me-section {
+    padding: 3em;
+}
+
+.skills-section, .education-section, .projects-section {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    align-items: center; 
+}
+
+.skills-section ul, .education-section ul, .projects-section ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.skills-section li, .education-section li, .projects-section li {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.description-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+}
+
+.list li, .footer-sub-container li {
+    display: flex;      
+    align-items: center;
+    gap: 1em;
+}
+
+.main-container:nth-child(3) ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+}
+
+footer {
+    display: flex;
+    background-color: var(--footercolor);
+    width: 100%;
+    height: 12em;
+}
+
+.footer-container {
+    display: flex;
+    width: 100%;
+    padding: 2em;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer-sub-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    width: 20vw;
+    text-align: center;
+    gap: 1em;
+}
+
+.footer-sub-container ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    text-decoration: none;
+    gap: 1em;
+}
+
+.footer-sub-container a {
+    color: var(--textcolor);
+    text-decoration: none;
+}
+
+.footer-sub-container a:hover {
+    color: var(--hovercolor);
+}
+
+
+.footer-sub-container:nth-child(2) {
+    align-items: center;
+}
+
+/* Responsive Styles */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    
+    header nav ul {
+        flex-direction: column;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "box-1"
+        "box-2"
+        "box-3"
+        "box-4"
+        "box-5";
+    }
+
+    .bio-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none; 
+        position: absolute;
+        top: 5em; 
+        right: 0;
+        background-color: var(--maincolor);
+        width: 30vw;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 0;
+        border-bottom: 1px solid #333;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: grid; 
+        flex-direction: column;
+    }
+
+}
